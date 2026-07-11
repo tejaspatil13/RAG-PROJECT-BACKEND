@@ -1,4 +1,4 @@
-from fastapi import UploadFile, File, FastAPI
+from fastapi import UploadFile, File, FastAPI, HTTPException
 from pydantic import BaseModel
 import os
 import shutil
@@ -10,6 +10,7 @@ from modules.retriever import Retriever
 from modules.rag_chain import RAGChain
 
 from fastapi.middleware.cors import CORSMiddleware
+from logger import logger
 
 
 app = FastAPI()      
@@ -91,8 +92,17 @@ class ChatRequest(BaseModel):
 @app.post("/chat")
 
 async def chat(request: ChatRequest):
-    retriever = retriever_obj.get_retriever()
-    docs = retriever.invoke(request.question)
+    try:
+        retriever = retriever_obj.get_retriever()
+        docs = retriever.invoke(request.question)
+    except Exception as e:
+        if "RESOURCE_EXHAUSTED" in str(e) or "429" in str(e):
+            logger.error(f"Gemini embedding quota exceeded: {e}")
+            raise HTTPException(
+                status_code=429,
+                detail="Daily embedding quota exceeded. Please try again after the quota resets (~24h), or upgrade your Gemini API plan."
+            )
+        raise
 
     context = "\n\n".join(
         doc.page_content
