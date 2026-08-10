@@ -49,6 +49,11 @@ chain = RAGChain().get_chain()
 
 
 
+@app.get("/health")
+async def health():
+    return {"status": "ok"}
+
+
 @app.post("/upload")
 async def upload_pdf(file: UploadFile = File(...)):
 
