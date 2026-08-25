@@ -10,7 +10,9 @@ python-dotenv
 # LangChain
 # ==========================================
 langchain-core
-langchain-community
+# Pinned <0.4: ragas still imports langchain_community.chat_models.vertexai,
+# which was dropped from langchain-community starting with 0.4.0.
+langchain-community==0.3.31
 langchain-text-splitters
 langchain-groq
 langchain-google-genai
@@ -34,3 +36,21 @@ requests
 aiofiles
 loguru
 tqdm
+
+# ==========================================
+# Security
+# ==========================================
+slowapi
+
+# ==========================================
+# Observability
+# ==========================================
+langsmith
+
+# ==========================================
+# Evaluation (dev/offline use only, run via eval/evaluate.py)
+# ==========================================
+ragas
+datasets
+pytest
+httpx
