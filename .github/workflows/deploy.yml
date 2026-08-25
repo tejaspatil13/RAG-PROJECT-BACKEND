@@ -5,6 +5,12 @@ on:
     branches:
       - main
 
+env:
+  AWS_REGION: ap-southeast-2
+  ECR_REPOSITORY: contextai-backend
+  ECR_REGISTRY: 678716369701.dkr.ecr.ap-southeast-2.amazonaws.com
+  IMAGE_NAME: contextai-backend
+
 jobs:
   test:
     name: Run Tests
@@ -26,3 +32,69 @@ jobs:
       - name: Run tests
         run: |
           pytest
+
+  build-and-deploy:
+    name: Build and Deploy
+    needs: test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Login to Amazon ECR
+        uses: aws-actions/amazon-ecr-login@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build Docker image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          platforms: linux/amd64
+          push: true
+          tags: |
+            ${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:latest
+
+      - name: Deploy to EC2
+        env:
+          EC2_HOST: ${{ secrets.EC2_HOST }}
+          EC2_SSH_KEY: ${{ secrets.EC2_SSH_KEY }}
+        run: |
+          echo "$EC2_SSH_KEY" > ec2-key.pem
+          chmod 600 ec2-key.pem
+
+          ssh -o StrictHostKeyChecking=no \
+            -i ec2-key.pem \
+            ubuntu@$EC2_HOST << 'EOF'
+
+            aws ecr get-login-password --region ap-southeast-2 | \
+              docker login --username AWS --password-stdin \
+              678716369701.dkr.ecr.ap-southeast-2.amazonaws.com
+
+            docker pull \
+              678716369701.dkr.ecr.ap-southeast-2.amazonaws.com/contextai-backend:latest
+
+            docker stop contextai-backend || true
+            docker rm contextai-backend || true
+
+            docker run -d \
+              --name contextai-backend \
+              --restart unless-stopped \
+              --env-file .env \
+              -p 8000:8000 \
+              678716369701.dkr.ecr.ap-southeast-2.amazonaws.com/contextai-backend:latest
+
+            docker ps
+
+          EOF
+
+          rm -f ec2-key.pem
