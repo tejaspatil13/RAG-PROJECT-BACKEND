@@ -1,0 +1,403 @@
+[
+  {
+    "id": "q001",
+    "query": "How does the book define a data scientist?",
+    "ideal_answer": "The book defines a data scientist as someone who extracts insights from messy data.",
+    "expected_context": [
+      "A data scientist is someone who extracts insights from messy data."
+    ]
+  },
+  {
+    "id": "q002",
+    "query": "What three areas does the book say data science lies at the intersection of?",
+    "ideal_answer": "Hacking skills, math and statistics knowledge, and substantive expertise.",
+    "expected_context": [
+      "The preface describes data science as the intersection of hacking skills, math and statistics knowledge, and substantive expertise."
+    ]
+  },
+  {
+    "id": "q003",
+    "query": "What is degree centrality in the DataSciencester network example?",
+    "ideal_answer": "It is the number of connections a user has, computed from the length of the user’s friends list.",
+    "expected_context": [
+      "Degree centrality is the number of connections a person has, computed by counting the user’s friends."
+    ]
+  },
+  {
+    "id": "q004",
+    "query": "How can DataSciencester find people with common interests?",
+    "ideal_answer": "It builds indexes from interests to users and users to interests, then counts shared interests.",
+    "expected_context": [
+      "The book builds user-to-interest and interest-to-user indexes and counts shared interests to find users with common interests."
+    ]
+  },
+  {
+    "id": "q005",
+    "query": "What does it mean that Python functions are first-class?",
+    "ideal_answer": "Functions can be assigned to variables and passed to other functions as arguments; lambdas can also create functions.",
+    "expected_context": [
+      "Python functions are first-class: they can be assigned to variables and passed into functions like other arguments."
+    ]
+  },
+  {
+    "id": "q006",
+    "query": "What is a Python list comprehension used for?",
+    "ideal_answer": "It creates a new list by transforming elements, filtering elements, or doing both in a compact expression.",
+    "expected_context": [
+      "List comprehensions transform or filter sequences, such as producing even numbers or squares."
+    ]
+  },
+  {
+    "id": "q007",
+    "query": "What is the difference between sort and sorted in Python?",
+    "ideal_answer": "sort changes a list in place, while sorted returns a new sorted list and leaves the original unchanged.",
+    "expected_context": [
+      "list.sort() sorts in place, whereas sorted(x) returns a new sorted list without changing x."
+    ]
+  },
+  {
+    "id": "q008",
+    "query": "Why are generators and iterators useful when working with data?",
+    "ideal_answer": "They let values be produced and processed iteratively rather than requiring an entire collection at once.",
+    "expected_context": [
+      "The Python chapter introduces generators and iterators as tools for producing and processing sequences iteratively."
+    ]
+  },
+  {
+    "id": "q009",
+    "query": "What are the two primary uses of data visualization?",
+    "ideal_answer": "Exploring data and communicating data.",
+    "expected_context": [
+      "The visualization chapter says there are two primary uses of data visualization: to explore data and to communicate data."
+    ]
+  },
+  {
+    "id": "q010",
+    "query": "Which Python visualization library does the book use?",
+    "ideal_answer": "Matplotlib, particularly matplotlib.pyplot, for simple visualizations.",
+    "expected_context": [
+      "The book uses matplotlib and matplotlib.pyplot for simple bar charts, line charts, and scatterplots."
+    ]
+  },
+  {
+    "id": "q011",
+    "query": "When is a line chart useful?",
+    "ideal_answer": "It is useful for showing trends or how a quantity changes across an ordered variable such as time.",
+    "expected_context": [
+      "The book uses line charts to visualize trends, such as nominal GDP across years."
+    ]
+  },
+  {
+    "id": "q012",
+    "query": "What is a scatterplot used for?",
+    "ideal_answer": "It displays paired numerical observations and helps examine relationships between two variables.",
+    "expected_context": [
+      "Scatterplots are used to visualize relationships between two numerical variables."
+    ]
+  },
+  {
+    "id": "q013",
+    "query": "What is a vector in the book’s treatment of linear algebra?",
+    "ideal_answer": "A vector is an object that can be added to other vectors and multiplied by scalars; numeric data can be represented as vectors.",
+    "expected_context": [
+      "Vectors can be added and multiplied by scalars, and numeric data such as height, weight, and age can be represented as vectors."
+    ]
+  },
+  {
+    "id": "q014",
+    "query": "How are two vectors added?",
+    "ideal_answer": "Two vectors of the same length are added component by component.",
+    "expected_context": [
+      "Vector addition is componentwise, and the vectors must have the same length."
+    ]
+  },
+  {
+    "id": "q015",
+    "query": "What is the dot product of two vectors?",
+    "ideal_answer": "It is the sum of the products of corresponding components and is used in later vector calculations and similarity measures.",
+    "expected_context": [
+      "The dot product is the sum of pairwise products and is used in calculations such as cosine similarity."
+    ]
+  },
+  {
+    "id": "q016",
+    "query": "How does the book represent a matrix?",
+    "ideal_answer": "As a list of lists, with each inner list representing a row.",
+    "expected_context": [
+      "The book represents matrices as lists of lists, where the rows contain the matrix entries."
+    ]
+  },
+  {
+    "id": "q017",
+    "query": "What measures of central tendency are discussed?",
+    "ideal_answer": "Mean, median, mode, and quantiles are discussed for describing a data set.",
+    "expected_context": [
+      "The statistics chapter covers mean, median, mode, and quantiles under central tendencies."
+    ]
+  },
+  {
+    "id": "q018",
+    "query": "What is the difference between variance and standard deviation?",
+    "ideal_answer": "Variance is the average squared deviation from the mean; standard deviation is its square root and has the same units as the data.",
+    "expected_context": [
+      "The book discusses variance and standard deviation as measures of dispersion; standard deviation is the square root of variance."
+    ]
+  },
+  {
+    "id": "q019",
+    "query": "What is correlation and how is it related to covariance?",
+    "ideal_answer": "Covariance measures joint variation, while correlation normalizes covariance by the variables’ standard deviations.",
+    "expected_context": [
+      "The book discusses covariance and correlation as measures of how two variables vary together, with correlation normalized by scale."
+    ]
+  },
+  {
+    "id": "q020",
+    "query": "Why does correlation not imply causation?",
+    "ideal_answer": "Correlation can result from coincidence, confounding variables, or another relationship; it alone does not establish causality.",
+    "expected_context": [
+      "The book warns that correlation and causation are different and discusses confounding variables and other caveats."
+    ]
+  },
+  {
+    "id": "q021",
+    "query": "What is conditional probability?",
+    "ideal_answer": "It is the probability of an event given that another event is known to have occurred.",
+    "expected_context": [
+      "The probability chapter introduces conditional probability as probability conditioned on another event."
+    ]
+  },
+  {
+    "id": "q022",
+    "query": "What does Bayes’s theorem allow you to calculate?",
+    "ideal_answer": "It relates conditional probabilities and lets you update the probability of an event or hypothesis given evidence.",
+    "expected_context": [
+      "Bayes’s theorem is used to relate conditional probabilities and update probability given evidence."
+    ]
+  },
+  {
+    "id": "q023",
+    "query": "What is a random variable?",
+    "ideal_answer": "It is a variable whose value is determined by a random process; the book discusses Bernoulli, binomial, uniform, and normal examples.",
+    "expected_context": [
+      "The book discusses random variables including Bernoulli, binomial, uniform, and normal variables and their distributions."
+    ]
+  },
+  {
+    "id": "q024",
+    "query": "What does the central limit theorem say?",
+    "ideal_answer": "The average of many independent identically distributed random variables is approximately normally distributed, with spread decreasing with sample size.",
+    "expected_context": [
+      "The central limit theorem says that the average of many independent identically distributed random variables is approximately normal."
+    ]
+  },
+  {
+    "id": "q025",
+    "query": "What is a null hypothesis?",
+    "ideal_answer": "It is the hypothesis tested in statistical hypothesis testing, usually representing a baseline or no-effect claim.",
+    "expected_context": [
+      "The hypothesis-testing chapter introduces the null hypothesis and tests whether observed data are inconsistent with it."
+    ]
+  },
+  {
+    "id": "q026",
+    "query": "What is a p-value?",
+    "ideal_answer": "It measures how unusual an observed result would be under the null hypothesis.",
+    "expected_context": [
+      "The book uses p-values to assess how surprising an observed result is under the null hypothesis."
+    ]
+  },
+  {
+    "id": "q027",
+    "query": "What is p-hacking?",
+    "ideal_answer": "It is searching or manipulating analyses until a statistically significant result appears, increasing the chance of false discoveries.",
+    "expected_context": [
+      "Testing many hypotheses or selectively removing outliers until significance appears is described as p-hacking."
+    ]
+  },
+  {
+    "id": "q028",
+    "query": "What is the basic idea of an A/B test?",
+    "ideal_answer": "Randomly expose users to two alternatives and compare an outcome such as click rates to assess whether the difference is meaningful.",
+    "expected_context": [
+      "The book’s A/B test randomly shows visitors advertisement A or B and tracks clicks."
+    ]
+  },
+  {
+    "id": "q029",
+    "query": "What is gradient descent?",
+    "ideal_answer": "An optimization method that repeatedly moves opposite the gradient to find a minimum.",
+    "expected_context": [
+      "The book describes minimizing a function by repeatedly taking small steps opposite the gradient."
+    ]
+  },
+  {
+    "id": "q030",
+    "query": "What does the gradient tell you?",
+    "ideal_answer": "It is the vector of partial derivatives and gives the direction of fastest increase of a function.",
+    "expected_context": [
+      "The gradient is the vector of partial derivatives and indicates the direction of fastest increase."
+    ]
+  },
+  {
+    "id": "q031",
+    "query": "Why is step size important in gradient descent?",
+    "ideal_answer": "It controls how far each update moves; a poor step size can make optimization slow or unstable.",
+    "expected_context": [
+      "The gradient descent chapter discusses choosing the right step size because optimization depends on update magnitude."
+    ]
+  },
+  {
+    "id": "q032",
+    "query": "What is stochastic gradient descent?",
+    "ideal_answer": "It updates parameters using individual data points, usually in random order, instead of the whole data set for every update.",
+    "expected_context": [
+      "The stochastic version takes a gradient step for each data point in random order and is typically faster than the batch approach."
+    ]
+  },
+  {
+    "id": "q033",
+    "query": "How can Python scripts process streamed command-line data?",
+    "ideal_answer": "They can read from sys.stdin and write to sys.stdout, allowing command-line pipelines.",
+    "expected_context": [
+      "The book demonstrates piping data through Python scripts using sys.stdin and sys.stdout and the pipe character."
+    ]
+  },
+  {
+    "id": "q034",
+    "query": "What are delimited files?",
+    "ideal_answer": "Files whose fields are separated by a delimiter such as a comma or tab.",
+    "expected_context": [
+      "The data-acquisition chapter covers delimited files, including comma-separated and tab-separated files."
+    ]
+  },
+  {
+    "id": "q035",
+    "query": "What is web scraping?",
+    "ideal_answer": "Extracting data from web pages; the book discusses HTML parsing and Beautiful Soup.",
+    "expected_context": [
+      "The book covers scraping web pages, parsing HTML, and using Beautiful Soup to extract information."
+    ]
+  },
+  {
+    "id": "q036",
+    "query": "Why might a data scientist use an API instead of scraping a web page?",
+    "ideal_answer": "An API provides a structured programmatic interface to data and can avoid manual page parsing.",
+    "expected_context": [
+      "The book explains that APIs provide access to data and that Python libraries can simplify API interaction."
+    ]
+  },
+  {
+    "id": "q037",
+    "query": "What is exploratory data analysis?",
+    "ideal_answer": "Examining data to understand distributions, ranges, relationships, and unusual values before modeling.",
+    "expected_context": [
+      "The working-with-data chapter begins with exploring one-dimensional, two-dimensional, and many-dimensional data."
+    ]
+  },
+  {
+    "id": "q038",
+    "query": "Why is cleaning and munging data important?",
+    "ideal_answer": "Real-world data can contain missing, inconsistent, malformed, or inconvenient values that must be transformed before analysis.",
+    "expected_context": [
+      "The book devotes a section to cleaning and munging because practical data often must be transformed into usable forms."
+    ]
+  },
+  {
+    "id": "q039",
+    "query": "What is rescaling data and why is it useful?",
+    "ideal_answer": "Rescaling puts variables on comparable scales, which matters for methods based on distances or magnitudes.",
+    "expected_context": [
+      "The book discusses rescaling data to put variables on comparable scales, especially when algorithms use distances."
+    ]
+  },
+  {
+    "id": "q040",
+    "query": "What is principal component analysis used for?",
+    "ideal_answer": "PCA reduces dimensionality by transforming data into directions that capture important variation using fewer dimensions.",
+    "expected_context": [
+      "The book introduces principal component analysis as a dimensionality-reduction technique and discusses centering data and finding principal components."
+    ]
+  },
+  {
+    "id": "q041",
+    "query": "What is machine learning in the book?",
+    "ideal_answer": "It is presented as building models that learn patterns from data for prediction or decision making.",
+    "expected_context": [
+      "The machine-learning chapter introduces modeling and predictive modeling and explains learning patterns from data."
+    ]
+  },
+  {
+    "id": "q042",
+    "query": "What is overfitting?",
+    "ideal_answer": "A model fits training data too closely, including noise, and performs poorly on unseen data.",
+    "expected_context": [
+      "The book discusses overfitting as fitting training data too closely and losing generalization."
+    ]
+  },
+  {
+    "id": "q043",
+    "query": "What is underfitting?",
+    "ideal_answer": "A model is too simple to capture important patterns, leading to poor performance.",
+    "expected_context": [
+      "Underfitting is contrasted with overfitting in the discussion of model complexity and predictive performance."
+    ]
+  },
+  {
+    "id": "q044",
+    "query": "What is the bias-variance trade-off?",
+    "ideal_answer": "It is the trade-off between a model being too simple and biased and one being too flexible and sensitive to training data.",
+    "expected_context": [
+      "The book discusses the bias-variance trade-off as a central consideration when choosing model complexity."
+    ]
+  },
+  {
+    "id": "q045",
+    "query": "What are the two main ideas behind k-nearest neighbors?",
+    "ideal_answer": "It requires a notion of distance and assumes nearby points are similar.",
+    "expected_context": [
+      "Nearest neighbors requires some notion of distance and the assumption that points close to one another are similar."
+    ]
+  },
+  {
+    "id": "q046",
+    "query": "How does k-nearest neighbors classify a new point?",
+    "ideal_answer": "It finds the k nearest labeled points and lets them vote on the predicted class, with tie-breaking or distance weighting possible.",
+    "expected_context": [
+      "For classification, the book finds the k nearest labeled points and lets them vote on the output."
+    ]
+  },
+  {
+    "id": "q047",
+    "query": "What is the curse of dimensionality?",
+    "ideal_answer": "In high-dimensional spaces points tend to be far apart, making distance-based methods such as nearest neighbors less effective.",
+    "expected_context": [
+      "High-dimensional spaces are vast and points tend not to be close to one another, causing problems for k-nearest neighbors."
+    ]
+  },
+  {
+    "id": "q048",
+    "query": "How does the choice of k affect k-nearest neighbors?",
+    "ideal_answer": "Different k values produce different neighborhoods and decision boundaries; larger k can produce smoother classifications.",
+    "expected_context": [
+      "The book compares k values and shows that increasing k produces smoother classification regions."
+    ]
+  },
+  {
+    "id": "q049",
+    "query": "What is the key assumption of Naive Bayes?",
+    "ideal_answer": "Features such as word occurrences are assumed conditionally independent given the class.",
+    "expected_context": [
+      "Naive Bayes assumes word occurrences are independent of one another conditional on a message being spam or not spam."
+    ]
+  },
+  {
+    "id": "q050",
+    "query": "Why does Naive Bayes use logarithms when multiplying probabilities?",
+    "ideal_answer": "Multiplying many small probabilities can cause floating-point underflow, so log probabilities are summed instead.",
+    "expected_context": [
+      "The book recommends log probabilities because multiplying many probabilities can produce numbers too close to zero."
+    ]
+  }
+  
+]

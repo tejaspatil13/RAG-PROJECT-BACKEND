@@ -37,7 +37,7 @@ class Retriever:
             logger.info("Creating Retriever...")
 
             Retriever.retriever = vector_db.as_retriever(
-                search_kwargs={"k": 3}
+                search_kwargs={"k": 5}
             )
 
             logger.info("Retriever Created Successfully")

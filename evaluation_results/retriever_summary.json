@@ -1,0 +1,10 @@
+{
+  "evaluation_date": "2026-08-31T17:15:13.285284",
+  "total_questions": 50,
+  "judge_model": "gpt-4o-mini",
+  "threshold": 0.7,
+  "retriever": "chroma_similarity",
+  "embedding_model": "gemini-embedding-001",
+  "top_k": 5,
+  "golden_dataset": "goldens/retriever_goldens.json"
+}
